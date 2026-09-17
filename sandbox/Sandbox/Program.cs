@@ -8,3 +8,9 @@ class Program
         Console.WriteLine("Hey Jude");
     }
 }
+
+// git status
+// git add .
+// git status
+// git commit -m "message"
+// git push
