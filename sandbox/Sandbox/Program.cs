@@ -9,6 +9,9 @@ class Program
     }
 }
 
+
+// github push instructions in the terminal - 
+
 // git status
 // git add .
 // git status
