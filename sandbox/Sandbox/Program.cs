@@ -17,3 +17,11 @@ class Program
 // git status
 // git commit -m "message"
 // git push
+
+
+// instruction for changing files
+// dir
+// cd c then click tab
+// dir
+// cd filename
+// dotnet run
