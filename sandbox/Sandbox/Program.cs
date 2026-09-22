@@ -4,8 +4,32 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Bonjour tout le monde!");
-        Console.WriteLine("Hey Jude");
+
+        // basic if / else if / else statement
+        int x = 10;
+        int y = 30;
+        int z = 40;
+
+
+        if (x == 10 && y == 30 || z == 40)
+            {
+                Console.WriteLine("x is 10");
+                Console.WriteLine("Y is 30");
+                Console.WriteLine("Z is 40");
+            }
+        else if (x == 20)
+            {
+                Console.WriteLine("x is 20");
+                
+            }
+        else
+            {
+                Console.WriteLine("Default output");
+                
+            }
+
+            string numberString = "123";
+            int myNumber = int.Parse(numberString);
     }
 }
 
@@ -25,3 +49,7 @@ class Program
 // dir
 // cd filename
 // dotnet run
+
+
+// Console.WriteLine("Bonjour tout le monde!");
+        // Console.WriteLine("Hey Jude");
