@@ -7,27 +7,36 @@ class Program
         Console.WriteLine("Random Number Guessing Game");
 
         Random randomGenerator = new Random();
-        int number = randomGenerator.Next(1, 11);
+        string response = "yes";
 
-        int guess = 0;
-
-        while (guess != number)
+        while (response == "yes")
         {
-            Console.Write("Type your guess 1-10: ");
-            guess = int.Parse(Console.ReadLine());
+            int number = randomGenerator.Next(1, 11);
+            int guess = 0;
 
-            if (guess < number)
+            while (guess != number)
             {
-                Console.WriteLine("Guess Higher!");
+                Console.Write("Type your guess 1-10: ");
+                guess = int.Parse(Console.ReadLine());
+
+                if (guess < number)
+                {
+                    Console.WriteLine("Guess Higher!");
+                }
+                else if (guess > number)
+                {
+                    Console.WriteLine("Guess Lower!");
+                }
+                else
+                {
+                    Console.WriteLine("You guessed correctly!");
+                }
             }
-            else if (guess > number)
-            {
-                Console.WriteLine("Guess Lower!");
-            }
-            else
-            {
-                Console.WriteLine("You guessed correctly!");
-            }
+
+            Console.Write("Do you want to continue? yes or no");
+            response = Console.ReadLine();
         }
     }
 }
+
+
