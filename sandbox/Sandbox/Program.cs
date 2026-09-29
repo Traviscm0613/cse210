@@ -3,31 +3,47 @@ using System.Runtime.CompilerServices;
 
 class Program
 {
-    static double AddNumbers(double x, int y)
-    {
-        return x + y;
-    }
-
-    static string MyName()
-    {
-        return "Bob";
-    }
-
-    static void DisplayGreeting(string name)
-    {
-        Console.WriteLine($"Welcome {name}, its nice to meet you");
-    }
     static void Main(string[] args)
     {
-        string myName = MyName();
-        DisplayGreeting(myName);
-        double total = AddNumbers(12.234, 20);
-        Console.WriteLine(total);
+        Circle myCircle = new Circle();
 
+        myCircle._radius = 10;
 
+        double area = myCircle.GetArea();
 
+        Console.WriteLine(area);
     }
 }
+
+
+
+
+
+
+    // Class 4
+// {
+//     static double AddNumbers(double x, int y)
+//     {
+//         return x + y;
+//     }
+
+//     static string MyName()
+//     {
+//         return "Bob";
+//     }
+
+//     static void DisplayGreeting(string name)
+//     {
+//         Console.WriteLine($"Welcome {name}, its nice to meet you");
+//     }
+//     static void Main(string[] args)
+//     {
+//         string myName = MyName();
+//         DisplayGreeting(myName);
+//         double total = AddNumbers(12.234, 20);
+//         Console.WriteLine(total);
+//     }
+// }
 
 
         // Class 3
