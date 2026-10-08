@@ -25,11 +25,11 @@ class Program
                 // Call DisplayJournal()
                 break;
             case 3:
-                Console.WriteLine("Save");
+                Console.WriteLine("Write");
                 // Call ReadToFile()
                 break;
             case 4:
-                Console.WriteLine("Write");
+                Console.WriteLine("Read");
                 // call WriteToFile()
                 break;
             }
