@@ -4,6 +4,9 @@ class JournalEntry
     public string _prompt;
     public string _response;
 
+// Adding random for the prompts
+    private static Random random = new Random();
+
     public JournalEntry()
     {
         _date = "";
@@ -31,11 +34,12 @@ class JournalEntry
         string[] prompts =
         {
             "How was your day?",
-            "Talk about someone you met."
+            "Talk about someone you met.",
+            "Share the most memorable thing of your day."
         };
 
         _date = DateTime.Now.ToString();
-        _prompt = prompts[0];
+        _prompt = prompts[random.Next(prompts.Length)];
 
         Console.Write($"{_prompt} ");
         _response = Console.ReadLine();
