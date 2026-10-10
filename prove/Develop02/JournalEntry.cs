@@ -35,7 +35,9 @@ class JournalEntry
         {
             "How was your day?",
             "Talk about someone you met.",
-            "Share the most memorable thing of your day."
+            "Share the most memorable thing of your day.",
+            "What is something you can do to improve tomorrow? ",
+            "Were you physically active today? "
         };
 
         _date = DateTime.Now.ToString();
@@ -47,6 +49,6 @@ class JournalEntry
 
     public override string ToString()
     {
-        return $"{_date}#{_prompt}#{_response}";
+        return $"{_date} --- {_prompt} --- {_response}";
     }
 }

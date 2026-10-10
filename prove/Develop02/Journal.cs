@@ -25,14 +25,21 @@ class Journal
         writer.WriteToFile(filename, _entries);
     }
 
-    public void ReadFromFile()
-    {
-        Console.Write("Enter filename: ");
-        string filename = Console.ReadLine();
+    
+    
+public void ReadFromFile()
+{
+    Console.Write("Enter filename: ");
+    string filename = Console.ReadLine();
 
-        Read reader = new Read();
-        reader.ReadFromFile(filename, this);
-    }
+    _entries.Clear();
+
+    Read reader = new Read();
+    reader.ReadFromFile(filename, this);
+    DisplayJournal();
+}
+
+
     public void AddEntry(JournalEntry entry)
     {
         _entries.Add(entry);

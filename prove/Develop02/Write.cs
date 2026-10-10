@@ -1,8 +1,10 @@
+
 class Write
 {
     public void WriteToFile(string filename, List<JournalEntry> entries)
     {
-        using (StreamWriter outputFile = new StreamWriter(filename))
+        // true will make it where the file is not overwritten every time I run the program/ write to the the program.
+        using (StreamWriter outputFile = new StreamWriter(filename, true))
         {
             foreach (JournalEntry entry in entries)
             {
