@@ -24,9 +24,29 @@ class Journal
         Write writer = new Write();
         writer.WriteToFile(filename, _entries);
     }
+    
+    
+    // This will allow the user to completely wipe the file that they have been using to fill in their journal.
+    public void ClearFile()
+    {
+        Console.Write("Enter filename to clear: ");
+        string filename = Console.ReadLine();
+
+        if (File.Exists(filename))
+        {
+            File.WriteAllText(filename, "");
+            _entries.Clear();
+
+            Console.WriteLine("Journal file cleared!");
+        }
+        else
+        {
+            Console.WriteLine("File not found.");
+        }
+    }
 
     
-    
+    // This will read you each line in the file.
 public void ReadFromFile()
 {
     Console.Write("Enter filename: ");
@@ -36,6 +56,8 @@ public void ReadFromFile()
 
     Read reader = new Read();
     reader.ReadFromFile(filename, this);
+
+    // to make sure the whole file is displayed.
     DisplayJournal();
 }
 
@@ -45,3 +67,4 @@ public void ReadFromFile()
         _entries.Add(entry);
     }
 }
+

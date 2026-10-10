@@ -37,7 +37,13 @@ class JournalEntry
             "Talk about someone you met.",
             "Share the most memorable thing of your day.",
             "What is something you can do to improve tomorrow? ",
-            "Were you physically active today? "
+            "Were you physically active today? ",
+            "Were you happy with your day? ",
+            "Who was the most interesting person I interacted with today?",
+            "What was the best part of my day? ",
+            "How did I see the hand of the Lord in my life today? ",
+            "What was the strongest emotion I felt today?",
+            "If I had one thing I could do over today, what would it be?"
         };
 
         _date = DateTime.Now.ToString();
@@ -47,6 +53,7 @@ class JournalEntry
         _response = Console.ReadLine();
     }
 
+    // This send the info to the file in this format.
     public override string ToString()
     {
         return $"{_date} --- {_prompt} --- {_response}";

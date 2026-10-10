@@ -19,11 +19,11 @@ class Read
                 string prompt = parts[1];
                 string response = parts[2];
 
-                JournalEntry entry =
-                    new JournalEntry(date, prompt, response);
+                JournalEntry entry = new JournalEntry(date, prompt, response);
 
                 journal.AddEntry(entry);
             }
+            // This will display all the lines.
             else
             {
                 Console.WriteLine($"{line}");
