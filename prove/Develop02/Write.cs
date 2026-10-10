@@ -1,22 +1,15 @@
 class Write
 {
-    public void WriteToFile(string filename)​
+    public void WriteToFile(string filename, List<JournalEntry> entries)
+    {
+        using (StreamWriter outputFile = new StreamWriter(filename))
+        {
+            foreach (JournalEntry entry in entries)
+            {
+                outputFile.WriteLine(entry.ToString());
+            }
+        }
 
-    {​
-
-        using (StreamWriter outputFile = new StreamWriter(filename))​
-
-        {          ​
-
-            foreach(JournalEntry entry in entries)​
-
-            {​
-
-                outputFile.WriteLine(entry.ToString());​
-
-            }​
-
-        }​
-
-    }​
+        Console.WriteLine("Journal saved!");
+    }
 }

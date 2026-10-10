@@ -1,31 +1,25 @@
+
 class Read
 {
-    public void ReadFromFile(string filename)​
+    public void ReadFromFile(string filename, Journal journal)
+    {
+        string[] lines = File.ReadAllLines(filename);
 
-    {​
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split('#');
 
-        string[] lines = System.IO.File.ReadAllLines(filename);​
+            if (parts.Length == 3)
+            {
+                string date = parts[0];
+                string prompt = parts[1];
+                string response = parts[2];
 
-​
-        foreach (string line in lines)​
+                JournalEntry entry =
+                    new JournalEntry(date, prompt, response);
 
-        {​
-
-            string[] parts = line.Split("#");​
-
-​
-            string date = parts[0];​
-
-            string question = parts[1];​
-
-            string entryText = parts[2];​
-
-​
-            JournalEntry entry = new JournalEntry(date, question, entryText);  ​
-
-            this.AddEntry(entry);​
-
-        }​
-
-    }​
+                journal.AddEntry(entry);
+            }
+        }
+    }
 }
