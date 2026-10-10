@@ -16,4 +16,25 @@ class Journal
         _entries.Add(newEntry);
 
     }
+    public void WriteToFile()
+    {
+        Console.Write("Enter filename: ");
+        string filename = Console.ReadLine();
+
+        Write writer = new Write();
+        writer.WriteToFile(filename, _entries);
+    }
+
+    public void ReadFromFile()
+    {
+        Console.Write("Enter filename: ");
+        string filename = Console.ReadLine();
+
+        Read reader = new Read();
+        reader.ReadFromFile(filename, this);
+    }
+    public void AddEntry(JournalEntry entry)
+    {
+        _entries.Add(entry);
+    }
 }
