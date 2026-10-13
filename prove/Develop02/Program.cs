@@ -40,4 +40,6 @@ class Program
     }
 }
 
-// What I decided to do to show creativity was to add a case that completely clears the file that you have been saving your journal to. It won't remove the file though, just the contents inside. It has the same option where you type in the file name to choose which one you might want to clean.
+// What I decided to do to show creativity was to add a case that completely clears the file that you have been saving your journal to. 
+// It won't remove the file though, just the contents inside. 
+// It has the same option where you type in the file name to choose which one you might want to clean.
