@@ -22,3 +22,20 @@ class Program
         Console.WriteLine(area2);
     }
 }
+
+// for word
+// Main(string word)
+// IsHIdden(): bool
+// Hide: void
+// GetWordString: string
+// DisplayWord: void
+
+// for Scriputre Reference
+// ScriptureReference(string name, int chapter, int verse)
+// ScriptureReference(string name, int chapter, int startVerse, int endVerse)
+// DisplayScriputre reference
+
+// for Scripture
+// Scriputre
+
+// look at document for the rest of the outline
