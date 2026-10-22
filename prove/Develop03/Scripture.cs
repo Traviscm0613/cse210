@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 class Scripture
 {
     private List<Word> _words;
@@ -21,19 +24,20 @@ class Scripture
         _words = ConvertToWordList(text);
     }
 
-    public bool HideSomeWords()
+   public bool HideSomeWords()
     {
-        List<int> unhiddenWords = new List<int>();
+        Random random = new Random();
 
-        for (int i = 0; i < _words.Count; i++)
+        int hiddenWord = random.Next(_words.Count);
+
+        while (_words[hiddenWord].IsHidden())
         {
-            if (!_words[i].IsHidden())
-            {
-                unhiddenWords.Add(i);
-            }
+            hiddenWord = random.Next(_words.Count);
         }
 
-        return NumberOfHiddenWords() ==_words.Count;
+        _words[hiddenWord].Hide();
+
+        return NumberOfHiddenWords() == _words.Count;
     }
     
     public int GetWordCount()

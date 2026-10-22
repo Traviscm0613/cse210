@@ -35,18 +35,31 @@ class Program
 
         // };
 
-        foreach (Scripture scripture in scriptures)
-        {
-            scriptures[0].ShowScripture();
+        Random random = new Random();
+        Scripture scripture = scriptures[random.Next(scriptures.Count)];
 
+        while (true)
+        {
+            Console.Clear();
+
+            Console.WriteLine(scripture.GetScriptureReference());
+            scripture.ShowScripture();
             Console.WriteLine();
 
-            Scripture myScripture = new Scripture();
-            
-            Console.Write("Press enter to continue or type 'quit' to finish: ");
+            Console.Write("Press Enter to continue or type 'quit' to finish: ");
+            string input = Console.ReadLine();
+
+            if (input.ToLower() == "quit")
+            {
+                break;
+            }
+
+            if (scripture.HideSomeWords())
+            {
+                break;
+            }
         }
 
-        // Circle myCircle = new Circle(10);
 
     }
 }
