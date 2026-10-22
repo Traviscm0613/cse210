@@ -9,6 +9,7 @@ class Scripture
         _words = ConvertToWordList(text);
 
         _words[7].Hide();
+        
         // todo
     }
 
@@ -16,6 +17,17 @@ class Scripture
     {
         // todo
     }
+
+    public Scripture(ref ScriptureReference, string text)
+    {
+        // TODO
+    }
+
+    public bool HideSomeWords()
+    {
+        // TODO
+    }
+    
 
     public void ShowScripture()
     {
@@ -28,12 +40,12 @@ class Scripture
     // TODO - Add constructor for ScriptureReference
     public string GetScriptureReference()
     {
-        
+        // TODO
     }
 
     public int NumberOfHiddenWords()
     {
-        
+        // TODO
     }
 
     // ConvertTOWordList() - this method will receive a string paramter, which is a paragraph of text. It will split that text into words and create and add those words to a List<word> and return the list. //

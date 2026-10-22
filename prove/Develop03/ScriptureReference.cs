@@ -7,7 +7,7 @@ class ScriptureReference
     public ScriptureReference(string name, int chapter, int verse)
     {
         // TODO
-        
+
     }
 
     public ScriptureReference(string name, int chapter, int startVerse, int endVerse)
@@ -17,10 +17,10 @@ class ScriptureReference
 
     public void DisplayScriptureReference()
     {
-        
+        // TODO
     }
     public string GetScriptureReference()
     {
-        
+        // TODO
     }
 }
