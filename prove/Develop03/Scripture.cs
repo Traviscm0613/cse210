@@ -4,31 +4,42 @@ class Scripture
     // TODO - Add scripture reference
     private ScriptureReference _reference;
 
-    public Scripture(string name, int chapter, int verse, string text)
+    public Scripture(string bookName, int chapter, int verse, string text)
     {
+        _reference = new ScriptureReference(bookName, chapter, verse);
         _words = ConvertToWordList(text);
-
-        _words[7].Hide();
-        
-        // todo
     }
 
     public Scripture(string name, int chapter, int startVerse, int endVerse, string text)
     {
-        // todo
+        _words = ConvertToWordList(text);
     }
 
-    public Scripture(ref ScriptureReference, string text)
+    public Scripture(ref ScriptureReference reference, string text)
     {
-        // TODO
+        _reference = reference;
+        _words = ConvertToWordList(text);
     }
 
     public bool HideSomeWords()
     {
-        // TODO
+        List<int> unhiddenWords = new List<int>();
+
+        for (int i = 0; i < _words.Count; i++)
+        {
+            if (!_words[i].IsHidden())
+            {
+                unhiddenWords.Add(i);
+            }
+        }
+
+        return NumberOfHiddenWords() ==_words.Count;
     }
     
-
+    public int GetWordCount()
+    {
+        return _words.Count;
+    }
     public void ShowScripture()
     {
         foreach(Word word in _words)
@@ -40,12 +51,22 @@ class Scripture
     // TODO - Add constructor for ScriptureReference
     public string GetScriptureReference()
     {
-        // TODO
+        return _reference.GetScriptureReference();
     }
 
     public int NumberOfHiddenWords()
     {
-        // TODO
+        int hiddenWords = 0;
+
+        foreach (Word word in _words)
+        {
+            if (word.IsHidden())
+            {
+                hiddenWords++;
+            }
+        }
+
+        return hiddenWords;
     }
 
     // ConvertTOWordList() - this method will receive a string paramter, which is a paragraph of text. It will split that text into words and create and add those words to a List<word> and return the list. //
