@@ -26,6 +26,8 @@ class ScriptureReference
     {
         Console.WriteLine(GetScriptureReference());
     }
+
+    // This is how the scripture in program.cs will return.
     public string GetScriptureReference()
     {
         if (_endVerse.HasValue)

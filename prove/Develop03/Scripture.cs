@@ -4,7 +4,6 @@ using System.Collections.Generic;
 class Scripture
 {
     private List<Word> _words;
-    // TODO - Add scripture reference
     private ScriptureReference _reference;
 
     public Scripture(string bookName, int chapter, int verse, string text)
@@ -28,6 +27,7 @@ class Scripture
     {
         Random random = new Random();
 
+        // This chooses which random word to hide.
         int hiddenWord = random.Next(_words.Count);
 
         while (_words[hiddenWord].IsHidden())
@@ -52,7 +52,7 @@ class Scripture
         }
     }
 
-    // TODO - Add constructor for ScriptureReference
+    // constructor for ScriptureReference
     public string GetScriptureReference()
     {
         return _reference.GetScriptureReference();
@@ -73,7 +73,8 @@ class Scripture
         return hiddenWords;
     }
 
-    // ConvertTOWordList() - this method will receive a string paramter, which is a paragraph of text. It will split that text into words and create and add those words to a List<word> and return the list. //
+    // ConvertTOWordList() - this method will receive a string paramter, which is a paragraph of text. 
+    // It will split that text into words and create and add those words to a List<word> and return the list.
     private List<Word> ConvertToWordList(string text)
     {
         List<Word> tempWordList = new List<Word>();
