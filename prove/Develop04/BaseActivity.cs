@@ -1,12 +1,18 @@
 class BaseActivity
 {
 
+    private string _activityName;
+    private string _activityDescription;
     private int _duration;
     private DateTime _endTime;
 
-    public BaseActivity()
+
+    public BaseActivity(string activityName, string activityDescription)
     {
-       _duration = 30; //Replace with call to ObtainDuration();
+        _activityName = activityName;
+        _activityDescription = activityDescription;
+
+       _duration = 10; //Replace with call to ObtainDuration();
     }
 
     public void StartActivity()
@@ -19,6 +25,10 @@ class BaseActivity
         _endTime = DateTime.Now.AddSeconds(_duration);
     }
 
+    public void DisplayEnding()
+    {
+        // do
+    }
     public bool HasTimerExpired()
     {
        return DateTime.Now > _endTime; 
@@ -52,6 +62,16 @@ class BaseActivity
             Console.Write("\b");
         }
         Console.CursorVisible = true;
+    }
+
+    public void ObtainDuration()
+    {
+        // do
+    }
+
+    public string GetPromptString()
+    {
+        
     }
 }
 

@@ -1,4 +1,0 @@
-class Listing : BaseActivity
-{
-    
-}

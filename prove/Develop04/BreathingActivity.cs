@@ -1,9 +1,9 @@
 class BreathingActivity : BaseActivity
 {
 
-    public BreathingActivity() : base()
+    public BreathingActivity(): base()
     {
-        
+        // Leave blank. just to call base
     }
     public void RunActivity()
     {
