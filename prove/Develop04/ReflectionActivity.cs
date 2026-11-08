@@ -1,3 +1,6 @@
+using System;
+using System.Threading;
+
 class ReflectionActivity : BaseActivity
 {
     private List<string> _prompts = new List<string>();

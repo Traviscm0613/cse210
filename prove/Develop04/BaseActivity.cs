@@ -1,3 +1,6 @@
+using System;
+using System.Threading;
+
 class BaseActivity
 {
 
@@ -31,7 +34,7 @@ class BaseActivity
         Console.WriteLine();
         ObtainDuration();
         Console.WriteLine();
-        RunCountDownMessage("Get ready", 5);
+        RunCountDownMessage("Get ready", 3);
         StartTimer();
     }
 
@@ -73,18 +76,18 @@ class BaseActivity
     public void RunSpinnerMessage(string message, int seconds)
     {
         Console.CursorVisible = false;
-        // DateTime now = DateTime.Now;
-        DateTime endTime = DateTime.Now.AddSeconds(seconds);
-        // for(int i = 0; i < seconds; i++)
-        while(DateTime.Now < endTime)
+        Console.Write($"{message} ");
+        string spinnerAnimation = "-\\|/";
+        int index = 0;
+
+        for (int i = 0; i < 20; i++)
         {
-            Console.Write("+");
-            Thread.Sleep(200);
+            Console.Write($"{spinnerAnimation[index++ % spinnerAnimation.Length]}");
             Console.Write("\b");
-            Console.Write("-");
-            Thread.Sleep(200);
-            Console.Write("\b");
+            Thread.Sleep(300);
         }
+
+        Console.Clear();
         Console.CursorVisible = true;
     }
 
