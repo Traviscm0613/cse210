@@ -48,3 +48,6 @@ class Program
         }
     }
 }
+
+
+// Extra creativity: users can write a short journal entry after every activity.

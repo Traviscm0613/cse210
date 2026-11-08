@@ -1,12 +1,14 @@
 using System;
 using System.Threading;
 
+
 class BaseActivity
 {
 
     private string _activityName;
     private string _activityDescription;
     private int _duration;
+    private string _journalEntry;
     private DateTime _endTime;
 
 
@@ -45,7 +47,10 @@ class BaseActivity
 
     public void DisplayEnding()
     {
-         Console.WriteLine("\nWell done!!");
+        // extra creativity
+        WriteJournalEntry();
+
+        Console.WriteLine("\nWell done!!");
         RunSpinnerMessage("", 3);
         Console.WriteLine($"\nYou have completed another {_duration} seconds of the {_activityName}.");
         RunSpinnerMessage("", 3);
@@ -108,6 +113,17 @@ class BaseActivity
     public string GetPromptString()
     {
         return _activityDescription;
+    }
+
+    // Creativity -This will allow you to write a reflection to your journal.
+    public void WriteJournalEntry()
+    {
+        Console.WriteLine("\nTake a moment to write a short journal entry.");
+        Console.Write("What did you learn or think about during this activity? ");
+
+        _journalEntry = Console.ReadLine();
+
+        Console.WriteLine("\nThanks for sharing your thoughts!");
     }
 }
 
