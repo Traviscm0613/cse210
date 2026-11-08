@@ -4,13 +4,45 @@ class Program
 {
     static void Main(string[] args)
     {
-        BaseActivity activity = new BaseActivity();
+        // Extra creativity: prompts and questions do not repeat until all of
+        // the choices have been used during the current activity session.
+        bool running = true;
 
-        // activity.RunCountDownMessage("Get Ready", 5);
-        // activity.RunSpinnerMessage("Well done", 5);
+        while (running)
+        {
+            Console.Clear();
+            Console.WriteLine("Mindfulness Program");
+            Console.WriteLine("1. Start breathing activity");
+            Console.WriteLine("2. Start reflection activity");
+            Console.WriteLine("3. Start listing activity");
+            Console.WriteLine("4. Quit");
+            Console.Write("Select a choice from the menu: ");
 
-        BreathingActivity breathingActivity = new BreathingActivity();
+            string choice = Console.ReadLine();
 
-        breathingActivity.RunActivity();
+            if (choice == "1")
+            {
+                BreathingActivity activity = new BreathingActivity();
+                activity.RunActivity();
+            }
+            else if (choice == "2")
+            {
+                ReflectionActivity activity = new ReflectionActivity();
+                activity.RunActivity();
+            }
+            else if (choice == "3")
+            {
+                ListingActivity activity = new ListingActivity();
+                activity.RunActivity();
+            }
+            else if (choice == "4")
+            {
+                running = false;
+            }
+            else
+            {
+                Console.WriteLine("Please enter 1, 2, 3, or 4.");
+            }
+        }
     }
 }

@@ -12,12 +12,27 @@ class BaseActivity
         _activityName = activityName;
         _activityDescription = activityDescription;
 
-       _duration = 10; //Replace with call to ObtainDuration();
+     //Replace with call to ObtainDuration();
+    }
+
+    public int Duration
+    {
+        get
+        {
+            return _duration;
+        }
     }
 
     public void StartActivity()
     {
-        // Complete
+        Console.Clear();
+        Console.WriteLine($"Welcome to the {_activityName}.\n");
+        Console.WriteLine(_activityDescription);
+        Console.WriteLine();
+        ObtainDuration();
+        Console.WriteLine();
+        RunCountDownMessage("Get ready", 5);
+        StartTimer();
     }
 
     public void StartTimer()
@@ -27,11 +42,20 @@ class BaseActivity
 
     public void DisplayEnding()
     {
-        // do
+         Console.WriteLine("\nWell done!!");
+        RunSpinnerMessage("", 3);
+        Console.WriteLine($"\nYou have completed another {_duration} seconds of the {_activityName}.");
+        RunSpinnerMessage("", 3);
     }
     public bool HasTimerExpired()
     {
        return DateTime.Now > _endTime; 
+    }
+
+    public int SecondsRemaining()
+    {
+        double remaining = (_endTime - DateTime.Now).TotalSeconds;
+        return Math.Max(0, (int)Math.Ceiling(remaining));
     }
 
     public void RunCountDownMessage(string message, int seconds)
@@ -66,12 +90,21 @@ class BaseActivity
 
     public void ObtainDuration()
     {
-        // do
+        while (true)
+        {
+            Console.Write("How long, in seconds, would you like for your session? ");
+            if (int.TryParse(Console.ReadLine(), out int duration) && duration > 0)
+            {
+                _duration = duration;
+                return;
+            }
+            Console.WriteLine("Please enter a positive whole number.");
+        }
     }
 
     public string GetPromptString()
     {
-        
+        return _activityDescription;
     }
 }
 
