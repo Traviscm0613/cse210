@@ -11,4 +11,9 @@ class Police : Person
     {
         return $"Police: Weapons: {_weapons}: {base.GetPersonInformation()}";
     }
+
+    public override double GetSalary()
+    {
+        return 1433;
+    }
 }
