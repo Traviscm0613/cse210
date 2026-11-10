@@ -6,8 +6,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Extra creativity: prompts and questions do not repeat until all of
-        // the choices have been used during the current activity session.
         bool running = true;
 
         while (running)
