@@ -1,4 +1,4 @@
-class SimmpleGoal : BaseGoal
+class SimpleGoal : BaseGoal
 {
     
 }

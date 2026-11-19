@@ -1,4 +1,4 @@
-class CheckListGoal : BaseGoal
-{
+// class CheckListGoal : BaseGoal
+// {
     
-}
+// }
