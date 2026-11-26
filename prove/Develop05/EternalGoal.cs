@@ -1,3 +1,5 @@
+using System;
+using System.IO; 
 class EternalGoal : BaseGoal
 {
     private int _numberOfCompletions;

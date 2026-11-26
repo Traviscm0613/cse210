@@ -1,8 +1,10 @@
+using System;
+using System.IO; 
 class SimpleGoal : BaseGoal
 {
 
-    public SimpleGoal(string name, string description, int points, bool complete, string goalType) 
-    : base(name, description, points, complete, goalType)
+    public SimpleGoal(string name, string description, int points, bool status)
+        : base(name, description, points, status, "SimpleGoal")
     {
     }
     public SimpleGoal() : base("SimpleGoal")
