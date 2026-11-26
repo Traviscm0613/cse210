@@ -1,49 +1,37 @@
 using System;
 
-public static class Program
+public class Menu
 {
-    public static void Main()
+    public int DisplayMenu()
     {
-        // Creativity beyond the core requirements:
-        // The program includes levels and quest titles based on the user's score.
-        // It also saves and loads the current score along with the goals.
+        Console.WriteLine("\nEternal Quest");
+        Console.WriteLine("1. Create Goal");
+        Console.WriteLine("2. List Goals");
+        Console.WriteLine("3. Save Goals");
+        Console.WriteLine("4. Load Goals");
+        Console.WriteLine("5. Record Event");
+        Console.WriteLine("6. Display Score");
+        Console.WriteLine("7. Quit");
+        return ReadInt("Select an option: ");
+    }
 
-        Goals goals = new();
-        Menu menu = new();
-        goals.LoadGoals();
+    public int DisplayCreateGoalMenu()
+    {
+        Console.WriteLine("\nGoal Types");
+        Console.WriteLine("1. Simple Goal");
+        Console.WriteLine("2. Eternal Goal");
+        Console.WriteLine("3. Checklist Goal");
+        return ReadInt("Select a goal type: ");
+    }
 
-        bool running = true;
-        while (running)
+    private static int ReadInt(string prompt)
+    {
+        while (true)
         {
-            switch (menu.DisplayMenu())
-            {
-                case 1:
-                    goals.CreateGoal(menu.DisplayCreateGoalMenu());
-                    break;
-                case 2:
-                    goals.DisplayGoals();
-                    break;
-                case 3:
-                    goals.SaveGoals();
-                    Console.WriteLine("Goals saved.");
-                    break;
-                case 4:
-                    goals.LoadGoals();
-                    Console.WriteLine("Goals loaded.");
-                    break;
-                case 5:
-                    goals.RecordEvent();
-                    break;
-                case 6:
-                    goals.DisplayScore();
-                    break;
-                case 7:
-                    running = false;
-                    break;
-                default:
-                    Console.WriteLine("Invalid option.");
-                    break;
-            }
+            Console.Write(prompt);
+            if (int.TryParse(Console.ReadLine(), out int value)) return value;
+            Console.WriteLine("Please enter a whole number.");
         }
     }
 }
+

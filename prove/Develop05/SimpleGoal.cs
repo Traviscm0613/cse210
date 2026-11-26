@@ -11,8 +11,8 @@ class SimpleGoal : BaseGoal
 
     public override int RecordEvent()
     {
-        // Todo, calls mark complete nad checks the goal
-        return 0;
+        // Todo, calls mark complete and checks the goal
+        return MarkComplete();
     }
 
 }
