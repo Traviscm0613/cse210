@@ -33,7 +33,11 @@ public static class Program
                 case 6:
                     goals.DisplayScore();
                     break;
+                // Creativity
                 case 7:
+                    goals.DisplayCompletedAndIncomplete();
+                    break;
+                case 8:
                     running = false;
                     break;
                 default:
@@ -43,3 +47,5 @@ public static class Program
         }
     }
 }
+
+// For creativty, I added another menu option that will orginize the goals that you have either completed or not completed. The reason was becasue once you complete certain goals, they all jumble up and it is better to see them separated.

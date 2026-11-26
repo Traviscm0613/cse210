@@ -12,8 +12,11 @@ public class Menu
         Console.WriteLine("4. Load Goals");
         Console.WriteLine("5. Record Event");
         Console.WriteLine("6. Display Score");
-        Console.WriteLine("7. Quit");
+        // Creativity ---
+        Console.WriteLine("7. Display Completed and Incomplete Goals");
+        Console.WriteLine("8. Quit");
         return ReadInt("Select an option: ");
+
     }
 
     public int DisplayCreateGoalMenu()

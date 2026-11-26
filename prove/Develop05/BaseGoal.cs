@@ -73,4 +73,11 @@ public abstract class BaseGoal
     }
 
     public abstract int RecordEvent();
+
+
+    // Creativity
+    public bool IsComplete()
+{
+    return _complete;
+}
 }

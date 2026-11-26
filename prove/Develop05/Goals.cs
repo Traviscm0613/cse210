@@ -136,4 +136,30 @@ public class Goals
             Console.WriteLine("Please enter a whole number.");
         }
     }
+
+
+
+    // Creativity - This is going to separate the goals that are completed and incompleted that way they aren't all jumbled together.
+    public void DisplayCompletedAndIncomplete()
+{
+    Console.WriteLine("\nCompleted Goals:");
+
+    foreach (BaseGoal goal in _goals)
+    {
+        if (goal.IsComplete())
+        {
+            Console.WriteLine(goal.GetConsoleString());
+        }
+    }
+
+    Console.WriteLine("\nIncomplete Goals:");
+
+    foreach (BaseGoal goal in _goals)
+    {
+        if (!goal.IsComplete())
+        {
+            Console.WriteLine(goal.GetConsoleString());
+        }
+    }
+}
 }
