@@ -38,12 +38,14 @@ class CheckListGoal : BaseGoal
 
     public override string GetFileSystemString()
     {
+        // The file format that it will use
         return base.GetFileSystemString() +
             $"|{_numberOfCompletions}|{_maxGoals}|{_bonusPoints}";
     }
     
     public override string GetConsoleString()
     {
+        // The file format that it will use
         return base.GetConsoleString() +
             $" -- Completed {_numberOfCompletions}/{_maxGoals} times; Bonus: {_bonusPoints}";
     }

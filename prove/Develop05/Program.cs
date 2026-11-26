@@ -33,7 +33,7 @@ public static class Program
                 case 6:
                     goals.DisplayScore();
                     break;
-                // Creativity
+                // Creativity - Calling the Display
                 case 7:
                     goals.DisplayCompletedAndIncomplete();
                     break;

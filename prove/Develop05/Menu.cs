@@ -1,6 +1,8 @@
 using System;
 using System.IO; 
 
+using System;
+
 public class Menu
 {
     public int DisplayMenu()
@@ -12,11 +14,13 @@ public class Menu
         Console.WriteLine("4. Load Goals");
         Console.WriteLine("5. Record Event");
         Console.WriteLine("6. Display Score");
-        // Creativity ---
         Console.WriteLine("7. Display Completed and Incomplete Goals");
         Console.WriteLine("8. Quit");
-        return ReadInt("Select an option: ");
 
+        Console.Write("Select an option: ");
+        int choice = int.Parse(Console.ReadLine());
+
+        return choice;
     }
 
     public int DisplayCreateGoalMenu()
@@ -25,16 +29,10 @@ public class Menu
         Console.WriteLine("1. Simple Goal");
         Console.WriteLine("2. Eternal Goal");
         Console.WriteLine("3. Checklist Goal");
-        return ReadInt("Select a goal type: ");
-    }
 
-    private static int ReadInt(string prompt)
-    {
-        while (true)
-        {
-            Console.Write(prompt);
-            if (int.TryParse(Console.ReadLine(), out int value)) return value;
-            Console.WriteLine("Please enter a whole number.");
-        }
+        Console.Write("Select a goal type: ");
+        int choice = int.Parse(Console.ReadLine());
+
+        return choice;
     }
 }
