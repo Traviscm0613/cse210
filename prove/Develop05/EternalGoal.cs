@@ -2,15 +2,19 @@ class EternalGoal : BaseGoal
 {
     private int _numberOfCompletions;
 
-    
-    public EternalGoal(string name, string description, int points, bool complete, bool completions)
+    public EternalGoal(string name, string description, int points, bool status, int completions)
+        : base(name, description, points, status, "EternalGoal")
     {
-        
+        _numberOfCompletions = completions;
     }
 
+    public EternalGoal() : base("EternalGoal")
+    {
+    }
     public override int RecordEvent()
     {
-        throw new NotImplementedException();
+        _numberOfCompletions++;
+        return GetPoints();
     }
     public override string GetConsoleString()
     {
@@ -18,6 +22,6 @@ class EternalGoal : BaseGoal
     }
     public override string GetFileSystemString()
     {
-        
+        return base.GetFileSystemString() + $"|{_numberOfCompletions}";
     }
 }

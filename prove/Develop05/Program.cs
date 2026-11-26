@@ -1,34 +1,45 @@
 using System;
 
-class Program
+public static class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        // BaseGoal myGoal = new BaseGoal("BaseGoal");
-        // Console.WriteLine(myGoal.GetConsoleString());
+        Goals goals = new();
+        Menu menu = new();
+        goals.LoadGoals();
 
-        SimpleGoal mySimpleGoal = new SimpleGoal();
-        Console.WriteLine(mySimpleGoal.GetConsoleString());
-        mySimpleGoal.MarkComplete();
-        Console.WriteLine(mySimpleGoal.GetConsoleString());
-
-
+        bool running = true;
+        while (running)
+        {
+            switch (menu.DisplayMenu())
+            {
+                case 1:
+                    goals.CreateGoal(menu.DisplayCreateGoalMenu());
+                    break;
+                case 2:
+                    goals.DisplayGoals();
+                    break;
+                case 3:
+                    goals.SaveGoals();
+                    Console.WriteLine("Goals saved.");
+                    break;
+                case 4:
+                    goals.LoadGoals();
+                    Console.WriteLine("Goals loaded.");
+                    break;
+                case 5:
+                    goals.RecordEvent();
+                    break;
+                case 6:
+                    goals.DisplayScore();
+                    break;
+                case 7:
+                    running = false;
+                    break;
+                default:
+                    Console.WriteLine("Invalid option.");
+                    break;
+            }
+        }
     }
 }
-
-
-
-// 1. Create Goal
-// 2. List Goals
-// 3. Save Goals
-// 4. Load Goals
-// 5. Record Event
-// 6. Quit
-
-
-// Dont use cerializing or steralizing whatever he said
-
-// Eternal Goal
-// Menu
-// SimpleGoal
-// Goals
